@@ -1,6 +1,43 @@
 export type Lang = "en" | "fr" | "es";
 
-export const translations = {
+export interface Dict {
+  tagline: string;
+  searchPlaceholder: string;
+  filters: string;
+  allVerbs: string;
+  group1: string;
+  group2: string;
+  group3: string;
+  teForm: string;
+  saved: string;
+  note: string;
+  stats: { verbs: string; mastered: string; review: string; today: string };
+  allVerbsTitle: string;
+  allVerbsSub: string;
+  startPractice: string;
+  dictionary: string;
+  masu: string;
+  te: string;
+  practice: string;
+  save: string;
+  practiceArea: string;
+  practiceSub: string;
+  sessionProgress: string;
+  prompt: string;
+  check: string;
+  correct: string;
+  incorrect: string;
+  quickSession: string;
+  teFormDrill: string;
+  mixed: string;
+  continuePractice: string;
+  next: string;
+  typeAnswer: string;
+  noResults: string;
+  resultsFor: string;
+}
+
+export const translations: Record<Lang, Dict> = {
   en: {
     tagline: "Practice Japanese verbs with calm, focused cards.",
     searchPlaceholder: "Search any verb in English, French, Spanish, romaji, kana, or kanji",
@@ -109,6 +146,4 @@ export const translations = {
     noResults: "Ningún verbo coincide.",
     resultsFor: "Resultados para",
   },
-} as const;
-
-export type Dict = (typeof translations)["en"];
+};
