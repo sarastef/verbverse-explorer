@@ -63,7 +63,6 @@ export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
               {f.label}
             </div>
             <div className="font-jp mt-2 text-2xl font-bold leading-none">{f.value}</div>
-            <p className="mt-3 text-[12.5px] leading-snug text-muted-foreground">{f.desc}</p>
           </div>
         ))}
       </div>
