@@ -73,11 +73,13 @@ export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
               {f.label}
             </div>
             <div className="font-jp mt-2 text-2xl font-bold leading-none">{f.value}</div>
-            <div className="mt-3">
-              <span className="font-jp inline-flex items-center rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-bold text-primary">
-                {f.hint}
-              </span>
-            </div>
+            {verb.group !== "G3" && (
+              <div className="mt-3">
+                <span className="font-jp inline-flex items-center rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-bold text-primary">
+                  {f.hint}
+                </span>
+              </div>
+            )}
           </div>
         ))}
       </div>
