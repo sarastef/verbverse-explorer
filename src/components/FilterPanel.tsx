@@ -16,7 +16,7 @@ export function FilterPanel({ active, onChange, stats }: Props) {
     { key: "G1", label: t.group1 },
     { key: "G2", label: t.group2 },
     { key: "G3", label: t.group3 },
-    { key: "te", label: t.teForm },
+    
     { key: "saved", label: t.saved },
   ];
   const statItems = [
