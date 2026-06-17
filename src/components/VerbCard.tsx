@@ -30,9 +30,6 @@ export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
       {/* Header */}
       <header className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <div className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-muted-foreground">
-            {t.politeForm}
-          </div>
           <h3 className="font-jp mt-2 text-5xl font-black leading-none tracking-tight md:text-6xl">
             {verb.masu_form}
           </h3>
