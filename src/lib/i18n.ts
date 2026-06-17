@@ -18,6 +18,12 @@ export interface Dict {
   dictionary: string;
   masu: string;
   te: string;
+  nai: string;
+  politeForm: string;
+  family: string;
+  dictionaryDesc: string;
+  teDesc: string;
+  naiDesc: string;
   practice: string;
   save: string;
   practiceArea: string;
@@ -56,6 +62,12 @@ export const translations: Record<Lang, Dict> = {
     dictionary: "Dictionary",
     masu: "Masu",
     te: "Te",
+    nai: "Nai",
+    politeForm: "Polite form",
+    family: "family",
+    dictionaryDesc: "Plain present form — use for casual speech and as the verb's base lookup form.",
+    teDesc: "Use the て-form for requests and to link actions: 〜てください.",
+    naiDesc: "Negative plain form — use to say someone does not, or will not, do something.",
     practice: "Practice",
     save: "Save",
     practiceArea: "Practice Area",
@@ -92,6 +104,12 @@ export const translations: Record<Lang, Dict> = {
     dictionary: "Dictionnaire",
     masu: "Masu",
     te: "Te",
+    nai: "Nai",
+    politeForm: "Forme polie",
+    family: "famille",
+    dictionaryDesc: "Forme neutre du présent — utilisée à l'oral familier et comme forme de base.",
+    teDesc: "Utilise la forme en て pour les demandes et enchaîner les actions : 〜てください.",
+    naiDesc: "Forme négative neutre — pour dire que quelqu'un ne fait pas ou ne fera pas quelque chose.",
     practice: "Pratiquer",
     save: "Garder",
     practiceArea: "Zone de pratique",
@@ -128,6 +146,12 @@ export const translations: Record<Lang, Dict> = {
     dictionary: "Diccionario",
     masu: "Masu",
     te: "Te",
+    nai: "Nai",
+    politeForm: "Forma cortés",
+    family: "familia",
+    dictionaryDesc: "Forma neutra del presente — úsala en habla informal y como forma base del verbo.",
+    teDesc: "Usa la forma て para peticiones y enlazar acciones: 〜てください.",
+    naiDesc: "Forma negativa neutra — para decir que alguien no hace o no hará algo.",
     practice: "Practicar",
     save: "Guardar",
     practiceArea: "Área de práctica",
