@@ -133,7 +133,7 @@ function Home() {
               <h2 className="text-lg font-bold">
                 {query ? `${t.resultsFor} "${query}"` : t.allVerbsTitle}
               </h2>
-              <p className="mt-0.5 text-xs text-muted-foreground">{t.allVerbsSub}</p>
+              
             </div>
             <span className="rounded-full bg-primary-soft px-3 py-1.5 text-xs font-bold text-primary">
               {filtered.length}
