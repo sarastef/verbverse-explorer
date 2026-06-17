@@ -19,19 +19,23 @@ const groupLabel = { G1: "Group 1", G2: "Group 2", G3: "Group 3" } as const;
 export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
   const { lang, t } = useLang();
 
-  const makeHint = (form: string) => {
+  const makeHint = (form: string, key: string) => {
     const masuBase = verb.masu_form.replace(/ます$/, "");
     let i = 0;
     while (i < masuBase.length && i < form.length && masuBase[i] === form[i]) i++;
     const from = masuBase.slice(i) || "ます";
     const to = form.slice(i) || "—";
+    
+    if (key === "nai" && to.endsWith("ない")) {
+      return `${from}→${to.slice(0, -2)} + ない`;
+    }
     return `${from}→${to}`;
   };
 
   const forms: Array<{ key: string; label: string; value: string; hint: string }> = [
-    { key: "dict", label: "DICTIONARY", value: verb.dictionary_form, hint: makeHint(verb.dictionary_form) },
-    { key: "te", label: "TE", value: verb.te_form, hint: makeHint(verb.te_form) },
-    { key: "nai", label: "NAI", value: verb.nai_form, hint: makeHint(verb.nai_form) },
+    { key: "dict", label: "DICTIONARY", value: verb.dictionary_form, hint: makeHint(verb.dictionary_form, "dict") },
+    { key: "te", label: "TE", value: verb.te_form, hint: makeHint(verb.te_form, "te") },
+    { key: "nai", label: "NAI", value: verb.nai_form, hint: makeHint(verb.nai_form, "nai") },
   ];
 
   return (
