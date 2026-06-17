@@ -19,10 +19,19 @@ const groupLabel = { G1: "Group 1", G2: "Group 2", G3: "Group 3" } as const;
 export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
   const { lang, t } = useLang();
 
-  const forms: Array<{ key: string; label: string; value: string; desc: string }> = [
-    { key: "dict", label: t.dictionary.toUpperCase(), value: verb.dictionary_form, desc: t.dictionaryDesc },
-    { key: "te", label: "て-FORM", value: verb.te_form, desc: t.teDesc },
-    { key: "nai", label: "ない-FORM", value: verb.nai_form, desc: t.naiDesc },
+  const makeHint = (form: string) => {
+    const masuBase = verb.masu_form.replace(/ます$/, "");
+    let i = 0;
+    while (i < masuBase.length && i < form.length && masuBase[i] === form[i]) i++;
+    const from = masuBase.slice(i) || "ます";
+    const to = form.slice(i) || "—";
+    return `${from}→${to}`;
+  };
+
+  const forms: Array<{ key: string; label: string; value: string; hint: string }> = [
+    { key: "dict", label: "DICTIONARY", value: verb.dictionary_form, hint: makeHint(verb.dictionary_form) },
+    { key: "te", label: "TE", value: verb.te_form, hint: makeHint(verb.te_form) },
+    { key: "nai", label: "NAI", value: verb.nai_form, hint: makeHint(verb.nai_form) },
   ];
 
   return (
@@ -60,6 +69,11 @@ export function VerbCard({ verb, onPractice, saved, onToggleSave }: Props) {
               {f.label}
             </div>
             <div className="font-jp mt-2 text-2xl font-bold leading-none">{f.value}</div>
+            <div className="mt-3">
+              <span className="font-jp inline-flex items-center rounded-full bg-primary-soft px-2.5 py-1 text-[11px] font-bold text-primary">
+                {f.hint}
+              </span>
+            </div>
           </div>
         ))}
       </div>
